@@ -19,7 +19,7 @@ public class DictionaryRepositoryImpl implements IDictionaryRepository {
         wordMap.put("laptop","Máy tính xách tay");
         wordMap.put("coffee","Cà phê");
         wordMap.put("class","Lớp");
-        wordMap.put("glass","kính");
+        wordMap.put("glass","Tấm kính");
         wordMap.put("ring","Chiếc nhẫn");
     }
     @Override

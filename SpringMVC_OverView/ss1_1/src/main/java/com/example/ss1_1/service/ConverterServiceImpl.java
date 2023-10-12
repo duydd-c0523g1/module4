@@ -10,12 +10,12 @@ public class ConverterServiceImpl implements IConverterService {
     private IConverterRepository converterRepository;
 
     @Override
-    public double convertUsdToVnd(String input) {
+    public double convertUsdToVnd(double input) {
         return converterRepository.convertUsdToVnd(input);
     }
 
     @Override
-    public double convertVndToUsd(String input) {
+    public double convertVndToUsd(double input) {
         return converterRepository.convertVndToUsd(input);
     }
 }

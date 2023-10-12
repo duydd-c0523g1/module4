@@ -5,12 +5,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class ConverterRepositoryImpl implements IConverterRepository {
     @Override
-    public double convertUsdToVnd(String input) {
-        return Double.parseDouble(input) * 23000;
+    public double convertUsdToVnd(double input) {
+        return input * 23000;
     }
 
     @Override
-    public double convertVndToUsd(String input) {
-        return (Double.parseDouble(input) / 23000);
+    public double convertVndToUsd(double input) {
+        return input / 23000;
     }
 }

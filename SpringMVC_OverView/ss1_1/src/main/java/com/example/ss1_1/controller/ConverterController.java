@@ -20,7 +20,7 @@ public class ConverterController {
         return "home";
     }
     @GetMapping("/calculate")
-    public ModelAndView convert(@RequestParam String currency, String input) {
+    public ModelAndView convert(@RequestParam String currency, double input) {
         if (currency.equals("vnd")) {
             return new ModelAndView("home", "result", converterService.convertVndToUsd(input));
         } else {
