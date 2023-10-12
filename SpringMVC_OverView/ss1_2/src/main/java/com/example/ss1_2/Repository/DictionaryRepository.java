@@ -2,13 +2,11 @@ package com.example.ss1_2.Repository;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Repository
-public class DictionaryRepositoryImpl implements IDictionaryRepository {
+public class DictionaryRepository implements IDictionaryRepository {
     private static Map<String, String> wordMap = new HashMap<>();
     static {
         wordMap.put("dog","Con chó");

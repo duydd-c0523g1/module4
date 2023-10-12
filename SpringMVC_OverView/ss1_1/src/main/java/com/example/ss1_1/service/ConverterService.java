@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ConverterServiceImpl implements IConverterService {
+public class ConverterService implements IConverterService {
     @Autowired
     private IConverterRepository converterRepository;
 
