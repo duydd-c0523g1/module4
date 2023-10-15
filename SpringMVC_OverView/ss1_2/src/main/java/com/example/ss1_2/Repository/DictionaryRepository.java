@@ -22,9 +22,10 @@ public class DictionaryRepository implements IDictionaryRepository {
     }
     @Override
     public String translate(String word) {
-        for (Map.Entry<String, String> w : wordMap.entrySet()) {
-            if (word.toLowerCase().equals(w.getKey())) {
-                return w.getValue();
+        if (word != null) {
+            String translation = wordMap.get(word.toLowerCase());
+            if (translation != null) {
+                return translation;
             }
         }
         return "Từ này chưa có trong từ điển";
