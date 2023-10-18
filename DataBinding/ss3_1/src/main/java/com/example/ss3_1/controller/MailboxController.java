@@ -21,7 +21,7 @@ public class MailboxController {
     @Autowired
     private IMailboxService mailboxService;
     @GetMapping
-    public String homePage(Model model) {
+    public String displayHomePage(Model model) {
         MailBox mailBox = new MailBox();
         List<String> languageList = new ArrayList<>();
         languageList.add("English");
