@@ -1,12 +1,6 @@
-package com.example.ss4_1.model;
+package com.example.ss4_1_2.model;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name="products")
 public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private double price;

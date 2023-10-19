@@ -29,10 +29,8 @@ public class ProductController {
     }
 
     @PostMapping("/add-product")
-    public String addProduct(@ModelAttribute Product product, RedirectAttributes redirectAttributes) {
+    public String addProduct(@ModelAttribute Product product) {
         productService.addProduct(product);
-        List<Product> productList = productService.displayProducts();
-        redirectAttributes.addFlashAttribute("prodList", productList);
         return "redirect:/";
     }
 
@@ -44,16 +42,15 @@ public class ProductController {
     }
 
     @PostMapping("/update")
-    public String updateProduct(@ModelAttribute (name="prod")Product product, RedirectAttributes redirectAttributes) {
+    public String updateProduct(@ModelAttribute (name="prod")Product product) {
         productService.updateProduct(product);
-        List<Product> productList = productService.displayProducts();
-        redirectAttributes.addFlashAttribute("prodList", productList);
         return "redirect:/";
     }
 
     @GetMapping("/{id}/delete")
     public String deleteProduct(@PathVariable int id, Model model) {
-        productService.deleteProduct(id);
+        Product product = productService.findProductById(id);
+        productService.deleteProduct(product);
         List<Product> productList = productService.displayProducts();
         model.addAttribute("prodList", productList);
         return "home";
