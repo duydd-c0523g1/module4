@@ -41,11 +41,6 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public Product displayProductDetails(int id) {
-        return null;
-    }
-
-    @Override
     public List<Product> findProductByName(String name) {
         TypedQuery<Product> query = entityManager.createQuery("select p from Product as p where p.name = :name", Product.class);
         query.setParameter("name", name);
