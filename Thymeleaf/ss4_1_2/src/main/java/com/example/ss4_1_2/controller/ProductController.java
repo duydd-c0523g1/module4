@@ -25,17 +25,12 @@ public class ProductController {
 
     @GetMapping("/add")
     public ModelAndView showAddNewPage() {
-        return new ModelAndView("add", "product", "");
+        return new ModelAndView("add", "product", new Product());
     }
     @PostMapping("/add")
-    public String addNewProduct(@ModelAttribute Product product, RedirectAttributes redirectAttributes) {
-        if (productService.addProduct(product)) {
-            redirectAttributes.addFlashAttribute("productList", productService.displayList());
+    public String addNewProduct(@ModelAttribute Product product) {
+        productService.addProduct(product);
             return "redirect:/";
-        } else {
-            redirectAttributes.addFlashAttribute("error", "Add failed!");
-            return "add";
-        }
     }
     @GetMapping("/{id}/update")
     public ModelAndView showUpdatePage(@PathVariable int id) {
@@ -43,23 +38,20 @@ public class ProductController {
         return new ModelAndView("update", "product", product);
     }
     @PostMapping("/update")
-    public String updateProduct(@ModelAttribute Product product, RedirectAttributes redirectAttributes) {
-        if (productService.updateProduct(product)) {
-            redirectAttributes.addFlashAttribute("productList", productService.displayList());
+    public String updateProduct(@ModelAttribute Product product) {
+       productService.updateProduct(product);
             return "redirect:/";
-        } else {
-            redirectAttributes.addFlashAttribute("error", "Update failed!");
-            return "update";
-        }
     }
     @GetMapping("/{id}/delete")
-    public String deleteProduct(@PathVariable int id, Model model) {
-        if (productService.deleteProduct(id)) {
-            model.addAttribute("productList", productService.displayList());
-            return "home";
-        } else {
-            model.addAttribute("error", "Delete failed");
-            return "home";
-        }
+    public String deleteProduct(@PathVariable int id) {
+        Product product = productService.findProductById(id);
+        productService.deleteProduct(product);
+        return "redirect:/";
+    }
+    @GetMapping("/find-product")
+    public String findProductByName(@RequestParam String name, Model model) {
+        List<Product> productList = productService.findProductByName(name);
+        model.addAttribute("productList", productList);
+        return "home";
     }
 }
