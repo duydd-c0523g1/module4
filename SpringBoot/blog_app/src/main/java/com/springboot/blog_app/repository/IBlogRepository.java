@@ -11,8 +11,9 @@ import java.util.List;
 
 
 public interface IBlogRepository extends JpaRepository<Blog, Integer> {
-    @Query(nativeQuery = true, value = "select * from blogs where id = :param")
-    Blog findBlogById(@Param("param") Integer id);
+    List<Blog> searchBlogByTitleContaining(String string);
+    @Query(nativeQuery = true, value = "select * from blogs where id = :param1")
+    Blog findBlogById(@Param("param1") Integer id);
 
     @Query(nativeQuery = true, value = "select * from blogs where name like :param2")
     List<Blog> findBlogByName(@Param("param2") String name);

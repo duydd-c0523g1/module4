@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.sql.rowset.serial.SerialStruct;
 import java.util.List;
 
 @Controller
@@ -47,6 +47,11 @@ public class BlogController {
     @GetMapping("/{id}/delete")
     public String deleteBlog(@PathVariable Integer id) {
         blogService.removeBlog(id);
-        return "home";
+        return "redirect:/";
+    }
+    @GetMapping("/search")
+    public ModelAndView searchBlog(@RequestParam String input) {
+        List<Blog> blogList = blogService.findBlogByName(input);
+        return new ModelAndView("home", "blogList", blogList);
     }
 }
