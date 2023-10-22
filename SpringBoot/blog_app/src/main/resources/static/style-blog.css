@@ -1,0 +1,9 @@
+
+body{
+    position: relative;
+    justify-content: center;
+    align-content: center;
+}
+.navbar {
+    margin:0 0 50px;
+}
