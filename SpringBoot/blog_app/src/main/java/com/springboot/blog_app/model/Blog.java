@@ -13,6 +13,8 @@ public class Blog {
     private String content;
     private long views;
     private String description;
+    @ManyToOne
+    private Category category;
 
     public Blog() {
     }
