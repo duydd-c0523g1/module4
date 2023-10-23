@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/style-blog.css">
 </head>
 <body>
-<div th:replace="navbar::nav"></div>
+<div th:replace="navbar::nav(${categoryList})"></div>
 <div class="container">
     <form th:object="${blog}" action="/update" method="post">
         <input th:field="*{id}" type="text" class="form-control" id="id" name="id" hidden="hidden">
@@ -23,6 +23,11 @@
         <div class="mb-3">
             <label for="desc" class="form-label">Description</label>
             <input th:field="*{description}" type="text" class="form-control" id="desc" maxlength="200" placeholder="This is a description">
+        </div>
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example" name="category" th:field="*{category}">
+                <option th:each="ctg : ${categoryList}" th:text="${ctg.name}"  th:value="${ctg.id}">Open this select menu</option>
+            </select>
         </div>
         <div class="mb-3">
             <label for="content" class="form-label">Content</label>

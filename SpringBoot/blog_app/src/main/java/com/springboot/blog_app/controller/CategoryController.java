@@ -15,9 +15,9 @@ import java.util.List;
 public class CategoryController {
     @Autowired
     private ICategoryService categoryService;
-    @GetMapping("show-category")
-    public ModelAndView showHomePage() {
-        List<Category> categoryList = categoryService.findAllCategory();
-        return new ModelAndView("home", "categoryList", categoryList);
-    }
+//    @GetMapping("show-category")
+//    public ModelAndView showHomePage() {
+//        List<Category> categoryList = categoryService.findAllCategory();
+//        return new ModelAndView("navbar", "categoryList", categoryList);
+//    }
 }

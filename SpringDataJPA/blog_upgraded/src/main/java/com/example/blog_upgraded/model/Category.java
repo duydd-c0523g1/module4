@@ -1,23 +1,21 @@
-package com.springboot.blog_app.model;
+package com.example.blog_upgraded.model;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "category")
+@Table(name = "categories")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer id;
+
     private String name;
     @OneToMany(mappedBy = "category")
     private Set<Blog> blogs;
-    public Category() {
-    }
 
-    public Category(Integer id, String name) {
-        this.id = id;
-        this.name = name;
+    public Category() {
     }
 
     public Integer getId() {
