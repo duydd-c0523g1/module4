@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<div class="container" style="margin-top: 5%; position: relative; border: 2px solid black; padding: 40px 40px 40px">
+    <h1 style="text-align: center">REGISTER</h1>
+    <h4 style="color: green; text-align: center" th:if="${msg} != null" th:text="${msg}"></h4>
+<form style="position: relative; left: 10%; top: 30%" th:object="${studentDTO}" action="/reg" method="post">
+    <div class="row mb-3">
+        <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
+        <div class="col-sm-7">
+            <input type="text" class="form-control" id="inputUsername" th:field="*{username}" required>
+            <span style="color: red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-7">
+            <input type="email" class="form-control" id="inputEmail"  th:field="*{email}" required>
+            <span style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-7">
+            <input type="password" class="form-control" id="inputPassword3" th:field="*{password}" required>
+            <span style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="confirmPassword3" class="col-sm-2 col-form-label">Confirm password</label>
+        <div class="col-sm-7">
+            <input type="password" class="form-control" id="confirmPassword3" required>
+        </div>
+    </div>
+    <fieldset class="row mb-3">
+        <legend class="col-form-label col-sm-2 pt-0">Courses</legend>
+        <div class="col-sm-7">
+            <div class="form-check" th:each="course : ${courseList}">
+                <input class="form-check-input" type="checkbox" id="gridCheck1" th:field="*{courses}" th:value="${course.courseId}">
+                <label class="form-check-label" for="gridCheck1" th:text="${course.courseName}">
+                    Java Course
+                </label>
+            </div>
+        </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
