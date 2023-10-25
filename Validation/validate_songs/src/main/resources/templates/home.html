@@ -5,30 +5,23 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/add" method="post" th:object="${songDTO}">
-    <table>
-        <tr>
-            <td><label for="songName">Song name</label></td>
-            <td><input type="text" id="songName" th:field="*{songName}" required></td>
-            <span style="color: red" th:if="${#fields.hasErrors('songName')}" th:errors="*{songName}"></span>
-        </tr>
-        <tr>
-            <td><label for="artist">Artist</label></td>
-            <td><input type="text" id="artist" th:field="*{artist}" required></td>
-            <span style="color: red" th:if="${#fields.hasErrors('artist')}" th:errors="*{artist}"></span>
-        </tr>
-        <tr>
-            <td><label for="genre">Genre</label></td>
-            <td>
-                <select id="genre" name="genre" required th:field="*{genres}">
-                    <option th:each="genre : ${genreList}" th:value="${genre.genreId}" th:text="${genre.genreName}"></option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="Add"> <span th:text="${msg}"></span></td>
-        </tr>
-    </table>
-</form>
+<table th:object="${songList}">
+    <tr th:each="song : ${songList}">
+        <td th:text="${song.songName}"></td>
+        <td th:text="${song.artist}"></td>
+        <td th:each="genre : ${song.genres}" th:text="${genre.genreName + ' '}"></td>
+    </tr>
+    <tr>
+        <td>
+            <a th:href="@{/home/(page = ${songList.number - 1})}" th:if="${songList.hasPrevious()}">Previous</a>
+        </td>
+        <td>
+            <span th:text="${songList.number + 1}"></span> / <span th:text="${songList.totalPages}"></span>
+        </td>
+        <td>
+            <a th:href="@{/home/(page = ${songList.number + 1})}" th:if="${songList.hasNext()}">Next</a>
+        </td>
+    </tr>
+</table>
 </body>
 </html>

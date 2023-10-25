@@ -6,6 +6,8 @@ import com.validate_songs.service.IGenreService;
 import com.validate_songs.service.ISongService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -27,20 +29,23 @@ public class SongController {
     @GetMapping("")
     public ModelAndView showAddSongPage(Model model) {
         model.addAttribute("genreList", genreService.findAllGenre());
-        return new ModelAndView("home", "songDTO", new SongDTO());
+        return new ModelAndView("add", "songDTO", new SongDTO());
     }
     @PostMapping("/add")
-    public ModelAndView addNewSong(@Validated @ModelAttribute SongDTO songDTO, BindingResult bindingResult,
-                      Model model, RedirectAttributes redirectAttributes) {
+    public String addNewSong(@Validated @ModelAttribute SongDTO songDTO, BindingResult bindingResult,
+                             RedirectAttributes redirectAttributes) {
         Song song = new Song();
         BeanUtils.copyProperties(songDTO, song);
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("genreList", genreService.findAllGenre());
-            return new ModelAndView("redirect:/", "songDTO", new SongDTO());
+            return "redirect:/";
         } else {
             songService.addNewSong(song);
-            redirectAttributes.addFlashAttribute("msg", "Success!");
-            return new ModelAndView("redirect:/", "songDTO", new SongDTO());
+            return "home";
         }
+    }
+    @GetMapping("/home")
+    public ModelAndView showHomePage(@PageableDefault(value = 1) Pageable pageable) {
+        return new ModelAndView("home", "songList", songService.findAllSong(pageable));
     }
 }

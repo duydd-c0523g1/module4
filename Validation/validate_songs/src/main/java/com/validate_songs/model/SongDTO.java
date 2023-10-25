@@ -8,12 +8,12 @@ import java.util.Set;
 public class SongDTO {
     @NotBlank
     @Size(max = 800)
-    @Pattern(regexp = "^[a-zA-Z0-9]{1,}$",message = "Cannot include special characters")
+//    @Pattern(regexp = "/^[^\\@;,.=+\\-]+$",message = "Cannot include special characters")
     private String songName;
     private Set<Genre> genres;
     @NotBlank
     @Size(max = 300)
-    @Pattern(regexp = "^[a-zA-Z0-9]{1,}$",message = "Cannot include special characters")
+//    @Pattern(regexp = "^[^\\@;,.=+\\-]+$",message = "Cannot include special characters")
     private String artist;
 
     public SongDTO() {
