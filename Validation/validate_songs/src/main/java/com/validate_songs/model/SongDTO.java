@@ -1,11 +1,14 @@
 package com.validate_songs.model;
 
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.Set;
 
-public class SongDTO {
+public class SongDTO implements Validator {
     @NotBlank
     @Size(max = 800)
     @Pattern(regexp = "^[a-zA-Z0-9 ]{1,800}$",message = "Cannot include special characters")
@@ -47,5 +50,15 @@ public class SongDTO {
 
     public void setArtist(String artist) {
         this.artist = artist;
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+
     }
 }

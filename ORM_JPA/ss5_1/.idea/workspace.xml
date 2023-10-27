@@ -5,29 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f77bbd5-1177-44e6-94e0-90d5032cfa96" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1/src/main/java/com/example/ss4_1/config/AppConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1/src/main/java/com/example/ss4_1/config/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/src/main/java/com/example/ss4_1_2/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/src/main/java/com/example/ss4_1_2/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/src/main/java/com/example/ss4_1_2/repository/IProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/src/main/java/com/example/ss4_1_2/repository/ProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/src/main/java/com/example/ss4_1_2/service/IProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/src/main/java/com/example/ss4_1_2/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/src/main/webapp/WEB-INF/views/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1_2/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thymeleaf/ss4_1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thymeleaf/ss4_1/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thymeleaf/ss4_1/src/main/java/com/example/ss4_1/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1/src/main/java/com/example/ss4_1/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thymeleaf/ss4_1/src/main/java/com/example/ss4_1/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thymeleaf/ss4_1/src/main/java/com/example/ss4_1/repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AOP/library_manager/src/main/java/com/library_manager/config/AspectLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AOP/library_manager/src/main/java/com/library_manager/controller/BookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AOP/library_manager/src/main/java/com/library_manager/model/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AOP/library_manager/src/main/java/com/library_manager/model/RentCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AOP/library_manager/src/main/java/com/library_manager/repository/IBookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AOP/library_manager/src/main/java/com/library_manager/repository/IRentCodeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AOP/library_manager/src/main/java/com/library_manager/service/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AOP/library_manager/src/main/java/com/library_manager/service/IBookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AOP/library_manager/src/main/java/com/library_manager/service/IRentCodeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AOP/library_manager/src/main/java/com/library_manager/service/RentCodeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AOP/library_manager/src/main/resources/templates/book-details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AOP/library_manager/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Validation/validate_songs/src/main/java/com/validate_songs/model/SongDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Validation/validate_songs/src/main/java/com/validate_songs/model/SongDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,23 +66,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/CodeGym/Git/module4/ORM_JPA/ss5_1/src/main/java/com/example/ss4_1/config",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "3a80397f1250e9277f14be05de60ddda",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/CodeGym/Git/module4/ORM_JPA/ss5_1/src/main/java/com/example/ss4_1/config&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;3a80397f1250e9277f14be05de60ddda&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\CodeGym\Git\module4\ORM_JPA\ss5_1\src\main\java\com\example\ss4_1\config" />
@@ -202,6 +193,8 @@
       <workItem from="1697598810474" duration="15606000" />
       <workItem from="1697636447457" duration="2023000" />
       <workItem from="1697685452579" duration="1847000" />
+      <workItem from="1698304715833" duration="47000" />
+      <workItem from="1698304772045" duration="17000" />
     </task>
     <servers />
   </component>

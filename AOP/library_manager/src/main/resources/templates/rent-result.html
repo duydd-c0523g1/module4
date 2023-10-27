@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title th:text="${'Renting: ' + book.title}">Bootstrap demo</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet">
+</head>
+<body>
+<div class="container" th:object="${book}">
+    <div class="row">
+        <div class="col-lg-4">
+            <img alt="" src="https://static.ishtar-collective.net/books/book-rites-of-passage.png"
+                 th:src="${book.bookCover}">
+        </div>
+        <div class="col-lg-8">
+            <table>
+                <thead>
+                <tr>
+                    <th th:text="${book.title}">Title</th>
+                </tr>
+                <tr>
+                    <td th:text="${book.description}">Description</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td th:text="${'Author: ' + book.author}">Author:</td>
+                </tr>
+                <tr>
+                    <td th:text="${'Books available: ' + book.remaining}">Available:</td>
+                </tr>
+                <tr>
+                    <td th:text="${'Your code: ' + code}">Code:</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="d-grid gap-2 col-4 mx-auto">
+                <a class="btn btn-success" type="button" th:if="${book.remaining > 0}" th:href="@{/rent/__${book.id}__}">Rent this book</a>
+                <button type="button" class="btn btn-success" th:if="${book.remaining < 1}" disabled>Out of stock</button>
+                <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Return book</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Return book</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/return-book" method="post">
+                    <div class="mb-3">
+                        <label for="code" class="col-form-label">Enter your code:</label>
+                        <input type="text" name="code" class="form-control" id="code">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Return book</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const exampleModal = document.getElementById('exampleModal')
+    if (exampleModal) {
+        exampleModal.addEventListener('show.bs.modal', event => {
+            // Button that triggered the modal
+            const button = event.relatedTarget
+            // Extract info from data-bs-* attributes
+
+            // Update the modal's content.
+            const modalTitle = exampleModal.querySelector('.modal-title')
+            const modalBodyInput = exampleModal.querySelector('.modal-body input')
+
+        })
+    }
+</script>
+<script crossorigin="anonymous"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

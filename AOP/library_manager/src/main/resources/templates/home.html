@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Bootstrap demo</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="card" style="width: 18rem;" th:each="book : ${bookList}">
+            <img alt="..." class="card-img-top" th:src="${book.bookCover}">
+            <div class="card-body" style="overflow-y: scroll">
+                <h5 class="card-title" th:text="${book.title}">Card title</h5>
+                <p class="card-text" th:text="${book.description}">Description</p>
+                <a class="btn btn-primary" th:href="@{/__${book.id}__/view-details}">Rent this book</a>
+            </div>
+        </div>
+    </div>
+    <div class="pages">
+        <a th:href="@{/(page = ${bookList.number - 1})}" th:if="${bookList.hasPrevious()}">Previous</a>
+        <span th:text="${bookList.number +1}"></span> / <span th:text="${bookList.totalPages}"></span>
+        <a th:href="@{/(page = ${bookList.number + 1})}" th:if="${bookList.hasNext()}">Next</a>
+    </div>
+</div>
+<script crossorigin="anonymous"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
