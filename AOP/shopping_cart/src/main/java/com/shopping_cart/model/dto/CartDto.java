@@ -5,11 +5,14 @@ import java.util.Map;
 
 public class CartDto {
     private Map<ProductDto, Integer> products = new HashMap<>();
+
     public CartDto() {
     }
+
     public CartDto(Map<ProductDto, Integer> products) {
         this.products = products;
     }
+
     public void addProduct(ProductDto productDto) {
         if (!products.containsKey(productDto)) {
             products.put(productDto, 1);
@@ -18,6 +21,7 @@ public class CartDto {
             products.put(productDto, newQuantity);
         }
     }
+
     public void removeProduct(ProductDto productDto) {
         try {
             int newQuantity = products.get(productDto) - 1;
@@ -30,6 +34,7 @@ public class CartDto {
             System.out.println(e.getMessage());
         }
     }
+
     public Integer countProductQuantity() {
         Integer productQuantity = 0;
         for (Map.Entry<ProductDto, Integer> entry : products.entrySet()) {
@@ -37,6 +42,7 @@ public class CartDto {
         }
         return productQuantity;
     }
+
     public Double getPrice() {
         Double totalPrice = 0.0;
         for (Map.Entry<ProductDto, Integer> entry : products.entrySet()) {
@@ -44,9 +50,11 @@ public class CartDto {
         }
         return totalPrice;
     }
+
     public Map<ProductDto, Integer> getProducts() {
         return products;
     }
+
     public void setProducts(Map<ProductDto, Integer> products) {
         this.products = products;
     }
