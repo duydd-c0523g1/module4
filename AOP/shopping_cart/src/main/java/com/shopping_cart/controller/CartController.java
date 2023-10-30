@@ -39,7 +39,7 @@ public class CartController {
         } else {
             cartDto.removeProduct(productDto);
         }
-        return "cart-list";
+        return "redirect:/cart";
     }
 
     @GetMapping("/additional/{id}")
