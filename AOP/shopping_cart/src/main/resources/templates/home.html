@@ -9,7 +9,7 @@
 <div th:if="${message != null}" th:text="${message}">
 </div>
 <h2>Danh sách sản phẩm</h2>
-<a href="/cart" class="btn btn-outline-info">My Cart</a><br>
+<a th:href="@{/cart/list}" class="btn btn-outline-info">My Cart</a><br>
 
 <div>
   <div style="display: grid; grid-template-columns: repeat(4,1fr);gap: 2rem">

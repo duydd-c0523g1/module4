@@ -20,7 +20,7 @@ public class CartController {
     @Autowired
     private IProductService productService;
 
-    @GetMapping
+    @GetMapping("/list")
     public String showCart(@SessionAttribute(value = "cart", required = false) CartDto cartDto,
                            Model model) {
         model.addAttribute("cartDto", cartDto);
