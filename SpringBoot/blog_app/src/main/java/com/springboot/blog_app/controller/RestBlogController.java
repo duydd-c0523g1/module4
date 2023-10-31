@@ -55,4 +55,13 @@ public class RestBlogController {
             return new ResponseEntity<>(blog, HttpStatus.OK);
         }
     }
+    @GetMapping("/search")
+    public ResponseEntity<List<Blog>> findBlogByName(@RequestParam String title) {
+        List<Blog> blogList = blogService.findBlogByName(title);
+        if (blogList.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } else {
+            return new ResponseEntity<>(blogList, HttpStatus.OK);
+        }
+    }
 }
